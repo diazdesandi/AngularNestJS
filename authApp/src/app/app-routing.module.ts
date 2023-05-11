@@ -6,7 +6,6 @@ import { isNotAuthenticatedGuard } from './auth/guards/is-not-authenticated.guar
 const routes: Routes = [
   {
     path: 'auth',
-    // isNotAuthenticated bloquea la salida del usuario activo hacia el login
     canActivate: [isNotAuthenticatedGuard],
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
@@ -23,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

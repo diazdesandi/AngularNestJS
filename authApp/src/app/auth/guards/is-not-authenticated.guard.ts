@@ -1,7 +1,9 @@
+import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { AuthStatus } from '../interfaces/auth-status.enum';
-import { inject } from '@angular/core';
+import { AuthStatus } from '../interfaces';
+
+// PublicGuard - PrivateGuard
 
 export const isNotAuthenticatedGuard: CanActivateFn = (route, state) => {
   const authService = inject(AuthService);

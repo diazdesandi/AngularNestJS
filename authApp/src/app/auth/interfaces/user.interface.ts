@@ -4,5 +4,4 @@ export interface User {
   name: string;
   isActive: boolean;
   roles: string[];
-  __v: number;
 }
